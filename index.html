@@ -1,138 +1,77 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SAMEEH & MADLEEN</title>
 <style>
-body{margin:0;font-family:serif;background:#fff7ea;color:#5b3b14;text-align:center;overflow-x:hidden}
-.intro{position:fixed;inset:0;background:#070707;color:#d4aa52;z-index:9;display:flex;align-items:center;justify-content:center;flex-direction:column}
-.hide{display:none}
-h1{letter-spacing:4px;color:#a87422}
-.names{font-size:42px;margin-top:70px}
-.env{width:310px;height:210px;background:#f4dfbd;margin:60px auto;position:relative;border-radius:10px;box-shadow:0 20px 40px #0003;cursor:pointer}
-.flap{position:absolute;inset:0;background:#fff0d4;clip-path:polygon(0 0,100% 0,50% 60%);transition:1s}
+body{margin:0;background:linear-gradient(#fff7ea,#f3dfbd);font-family:serif;text-align:center;color:#6b4516}
+.hero{min-height:100vh;padding:55px 20px}
+h1{font-size:42px;letter-spacing:4px;color:#a87422}
+.small{letter-spacing:3px;color:#8b651f}
+.env{width:330px;height:220px;margin:55px auto;position:relative;background:#f8e8c8;border:2px solid #c79b45;border-radius:12px;box-shadow:0 20px 40px #0003;cursor:pointer}
+.flap{position:absolute;inset:0;background:#fff2d8;clip-path:polygon(0 0,100% 0,50% 62%);transition:1s;z-index:3}
 .open .flap{transform:rotateX(180deg)}
-.seal{position:absolute;top:80px;left:118px;width:75px;height:75px;border-radius:50%;background:#c7953c;color:white;display:flex;align-items:center;justify-content:center;font-size:26px}
-.card{position:absolute;background:white;border:1px solid #d4aa52;border-radius:20px;width:260px;left:25px;bottom:20px;padding:20px;opacity:0;transition:1s}
-.open .card{bottom:170px;opacity:1}
-section{padding:35px 18px}
-.box{background:#ffffffaa;border:1px solid #d4aa52;border-radius:24px;padding:25px;max-width:500px;margin:auto}
-button,a{background:#b8862b;color:white;border:0;border-radius:30px;padding:13px 24px;text-decoration:none;margin:8px;display:inline-block}
-.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.t{border:1px solid #d4aa52;border-radius:15px;padding:12px}
-.petal{position:fixed;top:-20px;animation:fall 7s linear infinite;color:#d4aa52}
-@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
-</style>
-</head>
-<body<
-  <div class="intro" id="intro">
-  <h2>Every Love Story is Beautiful</h2>
-  <p>But Ours Is My Favorite</p>
-  <button onclick="start()">Open Invitation</button>
-</div>
+.seal{position:absolute;top:75px;left:125px;width:80px;height:80px;border-radius:50%;background:#c79b45;color:white;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:4}
+.card{position:absolute;width:270px;left:28px;bottom:25px;background:white;border:1px solid #c79b45;border-radius:18px;padding:18px;opacity:0;transition:1s;z-index:2}
+.open .card{bottom:175px;opacity:1}
+.box{margin:35px auto;padding:25px;max-width:520px;background:#fffaf0cc;border:1px solid #c79b45;border-radius:25px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;direction:ltr}.t{border:1px solid #c79b45;border-radius:15px;padding:12px}
+a,button{background:#b8862b;color:white;border:0;border-radius:30px;padding:13px 24px;text-decoration:none;margin:8px;display:inline-block}
+.spark{position:fixed;top:-20px;color:#c79b45;animation:fall 7s linear infinite}@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style></head><body>
 
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2023/02/28/audio_7f1d2b6f4b.mp3" type="audio/mpeg">
+<source src="https://cdn.pixabay.com/download/audio/2023/02/28/audio_7f1d2b6f4b.mp3" type="audio/mpeg">
 </audio>
 
-<h1 class="names">SAMEEH<br>&<br>MADLEEN</h1>
-<p>YOU ARE INVITED TO OUR WEDDING</p>
+<div class="hero">
+<p class="small">YOU ARE INVITED TO THE WEDDING OF</p>
+<h1>SAMEEH<br>&<br>MADLEEN</h1>
 
-<div class="env" id="env" onclick="openEnv()">
-  <div class="card">
-    <h2>SAMEEH & MADLEEN</h2>
-    <p>يسرّنا دعوتكم لمشاركتنا فرحة زفافنا</p>
-    <p><b>16 July 2026</b></p>
-    <p>9:30 PM</p>
-    <p>قاعة رامانا الفندقية</p>
-  </div>
-  <div class="flap"></div>
-  <div class="seal">S M</div>
+<div class="env" id="env" onclick="openInv()">
+<div class="card">
+<h2>SAMEEH & MADLEEN</h2>
+<p>يسرّنا دعوتكم لمشاركتنا فرحة زفافنا</p>
+<p><b>16 July 2026</b></p>
+<p>9:30 PM</p>
+<p>قاعة رامانا الفندقية</p>
+</div>
+<div class="flap"></div>
+<div class="seal">S M</div>
+</div>
+<p>اضغطي على الظرف لفتح الدعوة</p>
 </div>
 
-<section>
-  <div class="box">
-    <h2>THE BIG DAY</h2>
-    <p>📅 16 July 2026</p>
-    <p>🕤 9:30 PM</p>
-    <p>📍 قاعة رامانا الفندقية</p>
-  </div>
-</section>
+<div class="box">
+<h2>THE BIG DAY</h2>
+<p>📅 16 July 2026</p>
+<p>🕤 9:30 PM</p>
+<p>📍 قاعة رامانا الفندقية</p>
+</div>
 
-<section>
-  <div class="box">
-    <h2>COUNTDOWN</h2>
-    <div class="count">
-      <div class="t"><b id="d">0</b><br>Days</div>
-      <div class="t"><b id="h">0</b><br>Hours</div>
-      <div class="t"><b id="m">0</b><br>Min</div>
-      <div class="t"><b id="s">0</b><br>Sec</div>
-    </div>
-  </div>
-</section>
- <section>
-  <div class="box">
-    <h2>رسالة من العروسين</h2>
+<div class="box">
+<h2>COUNTDOWN</h2>
+<div class="count">
+<div class="t"><b id="d">0</b><br>Days</div>
+<div class="t"><b id="h">0</b><br>Hours</div>
+<div class="t"><b id="m">0</b><br>Min</div>
+<div class="t"><b id="s">0</b><br>Sec</div>
+</div>
+</div>
 
-    <p>
-      بكل حب وسعادة...<br><br>
-
-      ندعوكم لمشاركتنا أجمل لحظات حياتنا.<br>
-
-      حضوركم سيجعل فرحتنا تكتمل، ووجودكم سيمنح هذا اليوم ذكرى لا تُنسى.<br><br>
-
-      ننتظركم بكل شوق لنحتفل معًا ببداية فصل جديد من حياتنا.
-    </p>
-
-    <br>
-
-    <a href="https://maps.google.com/?q=قاعة+رامانا+الفندقية" target="_blank">
-      📍 View Location
-    </a>
-
-  </div>
-</section>
+<div class="box">
+<h2>رسالة من العروسين</h2>
+<p>بكل حب وسعادة، ندعوكم لمشاركتنا أجمل لحظات حياتنا.<br>
+حضوركم سيجعل فرحتنا تكتمل، ووجودكم سيمنح هذا اليوم ذكرى لا تُنسى.</p>
+<a href="https://maps.google.com/?q=قاعة+رامانا+الفندقية" target="_blank">📍 View Location</a>
+</div>
 
 <script>
-function start(){
- document.getElementById("intro").classList.add("hide");
-}
+function openInv(){document.getElementById("env").classList.add("open");document.getElementById("music").play()}
+const target=new Date("2026-07-16T21:30:00").getTime();
+function timer(){let diff=target-new Date().getTime();if(diff<0)diff=0;
+d.innerHTML=Math.floor(diff/86400000);h.innerHTML=Math.floor(diff/3600000)%24;m.innerHTML=Math.floor(diff/60000)%60;s.innerHTML=Math.floor(diff/1000)%60}
+setInterval(timer,1000);timer();
+setInterval(()=>{let x=document.createElement("div");x.className="spark";x.innerHTML="✦";x.style.left=Math.random()*100+"vw";document.body.appendChild(x);setTimeout(()=>x.remove(),7000)},350)
+</script></body></html>
 
-function openEnv(){
- document.getElementById("env").classList.add("open");
- document.getElementById("music").play();
-}
-
-const target=new Date("2026-07-16T21:30:00");
-
-function timer(){
- let now=new Date();
- let diff=target-now;
-
- if(diff<0) diff=0;
-
- document.getElementById("d").innerHTML=Math.floor(diff/1000/60/60/24);
- document.getElementById("h").innerHTML=Math.floor(diff/1000/60/60)%24;
- document.getElementById("m").innerHTML=Math.floor(diff/1000/60)%60;
- document.getElementById("s").innerHTML=Math.floor(diff/1000)%60;
-}
-
-setInterval(timer,1000);
-timer();
-
-setInterval(()=>{
- let p=document.createElement("div");
- p.className="petal";
- p.innerHTML="✦";
- p.style.left=Math.random()*100+"vw";
- p.style.fontSize=(10+Math.random()*18)+"px";
- document.body.appendChild(p);
-
- setTimeout(()=>p.remove(),7000);
-},300);
-</script>
-
-</body>
-</html> 
   
+
